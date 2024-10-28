@@ -12,8 +12,9 @@ public class Deck {
 
 
     /**
-     * Method creating new, sorted deck of cards.
-     * @return new instance Deck with sorted deck od cards
+     * Creates a new, sorted deck of cards. Cards are ordered first by suit and then by rank.
+     *
+     * @return a new instance of Deck with cards in sorted order
      */
     public static Deck createSortedDeck() {
         List<Card> cards = new ArrayList<Card>();
@@ -27,25 +28,36 @@ public class Deck {
 
     }
     /**
-     * method shuffling already existing Deck
+     * Shuffles the existing deck of cards in random order.
      */
     public void shuffle() {
         Collections.shuffle(cards);
     }
 
     /**
-     * method draws first card from the deck if possible
-     * @return Card | Null
+     * Draws the first card from the deck, if available. Removes the drawn card from the deck.
+     *
+     * @return the first card in the deck, or null if the deck is empty
      */
     public Card drawCard() {
         if (cards.isEmpty()) {return null;}
         return cards.remove(0);
     }
 
+    /**
+     * Checks if the deck is empty.
+     *
+     * @return true if the deck has no remaining cards, false otherwise
+     */
     public Boolean isEmpty() {
         return cards.isEmpty();
     }
 
+    /**
+     * Returns a string representation of the deck, listing each card on a new line.
+     *
+     * @return a string representation of the deck
+     */
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder("Deck:\n");

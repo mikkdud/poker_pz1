@@ -8,19 +8,37 @@ package org.example;
 import java.util.HashSet;
 import java.util.Set;
 
+/**
+ * Represents a player in the game, with a name and a set of cards as their hand.
+ */
 public class Player {
+    /**
+     * The player's hand, containing up to five unique cards.
+     */
     private Set<Card> hand;
+
+    /**
+     * The name of the player.
+     */
     private final String name;
+
+    /**
+     * Constructs a Player instance with the specified hand and name.
+     *
+     * @param hand the set of cards representing the player's hand
+     * @param name the name of the player
+     */
     private Player(Set<Card> hand, String name) {
         this.hand = hand;
         this.name = name;
     }
 
     /**
-     * method creating a player with assigned set of five cards
+     * Creates a new player with a hand of five cards drawn from the given deck.
      *
-     * @param deck (deck from which the player takes the cards
-     * @return Player
+     * @param deck the deck from which the player draws cards
+     * @param name the name of the player
+     * @return a new Player instance with an assigned hand of five cards
      */
     public static Player createPlayerWithHand(Deck deck, String name) {
         Set<Card> hand = new HashSet<>();
